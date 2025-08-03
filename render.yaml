@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: whatsapp-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node mjeshi/raymd.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SESSION_FILE
+        value: session.json
+      - key: PORT
+        value: 8000
